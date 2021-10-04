@@ -12,8 +12,6 @@ import javax.ws.rs.Produces;
 import javax.ws.rs.core.MediaType;
 import javax.ws.rs.core.Response;
 import javax.ws.rs.core.Response.Status;
-import javax.xml.bind.annotation.XmlElement;
-import javax.xml.bind.annotation.XmlRootElement;
 
 import com.simpleapi.bussiness.SearchRN;
 import com.simpleapi.errors.ErrorMessage;
@@ -22,13 +20,6 @@ import com.simpleapi.errors.ErrorMessage;
 @Produces(MediaType.APPLICATION_JSON)
 @Consumes(MediaType.APPLICATION_JSON)
 public class Services {
-	
-	@XmlRootElement
-	public static class Consulta {
-	    @XmlElement public String cpf;
-	    @XmlElement public Integer idProcesso;
-	    @XmlElement public String token;
-	}
 	
 	@Inject
 	SearchRN searchRN;
@@ -60,8 +51,5 @@ public class Services {
 		}
 
 	}
-	
-	
-	// http://localhost:8080/QueueAPI/api/count/name/{name}
 
 }
